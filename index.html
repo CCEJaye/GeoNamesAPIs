@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GeoNames APIs</title>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Charles Jaye">
+        <meta name="description" content="Retrieving information from the GeoNames API">
+        <meta name="keywords" content="GeoNames, API, JSON, AJAX, Webservices, cURL, PHP, POST">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="favicon.png">
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+		<script defer type="application/javascript" src="libs/jquery/js/jquery-3.5.1.min.js"></script>
+		<script defer type="application/javascript" src="js/script.js"></script>
+
+        <div id="preloader"></div>
+
+        <header class="jumbotron">
+
+            <h1 class="display-4">GeoNames APIs</h1>
+
+        </header>
+
+        <main>
+
+            <div class="card card-body">
+                <h4>APIs</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>API Name</th>
+                            <th>API Description</th>
+                            <th>Execute</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Country Code</td>
+                            <td>Retrieves the ISO country code for a given longitude, latitude, and buffer radius.</td>
+                            <td><button id="submit1" type="button" class="btn btn-primary">Submit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>2. Ocean</td>
+                            <td>Retrieves the name of the ocean at a given longitude, latitude, and buffer radius.</td>
+                            <td><button id="submit2" type="button" class="btn btn-primary">Submit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>3. Time Zone</td>
+                            <td>Retrieves the time zone and associated information for a given longitude, latitude, and buffer radius.</td>
+                            <td><button id="submit3" type="button" class="btn btn-primary">Submit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h4>Parameters</h4>
+                <form id="form">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><label for="lat">Latitude:</label></td>
+                                <td><input id="lat" type="range" min="-90" max="90" value="52"></td>
+                                <td><output id="latVal" for="lat">52 &deg</output></td>
+                            </tr>
+                            <tr>
+                                <td><label for="lng">Longitude:</label></td>
+                                <td><input id="lng" type="range" min="-180" max="180" value="0"></td>
+                                <td><output id="lngVal" for="lng">0 &deg</output></td>
+                            </tr>
+                            <tr>
+                                <td><label for="radius">Radius:</label></td>
+                                <td><input id="radius" type="range" min="0" max="100" value="0"></td>
+                                <td><output id="radiusVal" for="radius">0 km</output></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </form>
+                <h4>Results</h4>
+                <p id="results" class="text-success"></p>
+                <form>
+                    <label for="lang">Select a language for the results.</label><br>
+                    <select id="lang">
+                        <option value="en">English</option>
+                        <option value="fr">Francais</option>
+                        <option value="de">Deutsche</option>
+                    </select>
+                </form>
+            </div>
+
+        </main>
+    </body>
+
+</html>
